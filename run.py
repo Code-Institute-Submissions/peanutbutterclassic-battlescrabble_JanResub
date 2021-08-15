@@ -12,8 +12,35 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("battleship-words")
 
-battle_words = SHEET.worksheet("battle-words")
+# Create a function to retrieve a random word from each column in the worksheet.
 
-data = battle_words.get_all_values()
+# def get_battle_words():
+#     """
+#     Retrieve a randomised three letter word from data in google sheet.
+#     Get user to select a word from the list provided to sink the ship completely.
+#     If selection matches the word, the ship will sink. If not, user is given another chance until the right word is selected.
+#     """
+#     print("Select one word from the list to sink the ship.")
+#     print("The number of letters in the word must match the number of grids that the ship in target occupies.")
+#     print("For example: arc\n")
 
-print(data)
+#     battle_words = SHEET.worksheet("battle-words")
+#     data = battle_words.get_all_values()
+#     print(data)
+
+#     data_str = input("Choose your word wisely to sink the ship: ")
+#     print(f"You have selected {data_str}\n")
+    
+# get_battle_words()
+
+board = []
+
+for x in range(0, 10):
+    board.append(["0"] * 10)
+
+def print_board(board):
+    for i in board:
+        print(" ".join(i))
+    
+print_board(board)
+
