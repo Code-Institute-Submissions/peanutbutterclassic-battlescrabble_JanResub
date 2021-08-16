@@ -14,47 +14,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("battleship-words")
 
-# Create battle grid (10x10) using initial empty sting.
-# board = []
-
-# for x in range(0, 10):
-#     board.append(["0"] * 10)
-
-#     # Create function to build grid for battle.
-#     def print_board(board):
-#         """
-#         Create function to build grid for battle.
-#         """
-
-#         for i in board:
-#             print(" ".join(i))
-#     print("You are entering the battle perimetre!")
-#     print("Fire right away!\n")    
-#     print_board(board)
-
-# class Battle_Ships:
-#     """
-#     Create battleships length 3, 4 and 5
-#     """
-#     def battleships(self, ship_three, ship_four, ship_five):
-
-
-    
-
-#     while num_of_ships_placed != num_of_ships:
-#         random_row = random.randint(0, rows - 1)
-#         random_col = random.randint(0, cols - 1)
-#         direction = random.choice(["left", "right", "up", "down"])
-#         ship_size = random.randint(3, 5)
-#         if try_to_place_ship_on_grid(random_row, random_col, direction, ship_size):
-#             num_of_ships_placed += 1
-
-# battle_perimeter()
-
-# Create battle ships.
-# Three types of ships: (1) ship with length = 3 (2) ship with length = 4 (3) ship with length = 5.
-# battleships = []
-
 # Create a function to retrieve a random word from each column in the worksheet.
 """
 Function is duplicated three times for (1) three letter word (2) four letter word (3) five letter word.
@@ -87,7 +46,7 @@ def four_letter_words():
     """
     print("Select one word from the list to sink the ship.")
     print("The number of letters in the word must match the number of grids that the ship in target occupies.")
-    print("For example: arc\n")
+    print("For example: beer\n")
 
     battle_words = SHEET.worksheet("battle-words")
     data = battle_words.col_values(2)
@@ -97,7 +56,6 @@ def four_letter_words():
     user_four_str = input("Choose your word wisely to sink the ship: \n")
     print(f"You have selected {user_four_str}")
 
-
 def five_letter_words():
     """
     Retrieve a randomised three letter word from data in google sheet.
@@ -106,7 +64,7 @@ def five_letter_words():
     """
     print("Select one word from the list to sink the ship.")
     print("The number of letters in the word must match the number of grids that the ship in target occupies.")
-    print("For example: arc\n")
+    print("For example: break\n")
 
     battle_words = SHEET.worksheet("battle-words")
     data = battle_words.col_values(3)
@@ -252,8 +210,6 @@ def create_grid():
             linked_word = get_random_word(ship_size)
             linked_words.append({ 'row': random_row, 'col': random_col, 'word': linked_word })
 
-
-
 def print_grid():
     """Will print the grid with rows A-J and columns 0-9"""
     global grid
@@ -305,7 +261,9 @@ def main():
     create_grid()
     print_grid()
     print(linked_words)
-
+    three_letter_words()
+    four_letter_words()
+    five_letter_words()
 
 if __name__ == '__main__':
     main()
