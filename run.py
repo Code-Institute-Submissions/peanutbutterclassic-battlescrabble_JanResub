@@ -41,6 +41,8 @@ for x in range(0, 10):
 def print_board(board):
     for i in board:
         print(" ".join(i))
-    
+print("You are entering battle perimetre!")
+print("Fire right away!\n")    
 print_board(board)
+
 
