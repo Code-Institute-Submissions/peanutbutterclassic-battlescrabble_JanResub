@@ -8,7 +8,7 @@ The image is from [Am I responsive?](http://ami.responsivedesign.is/)
 Pre-reqs: Loops, Strings, Arrays, 2D Arrays, Global Variables, Methods.
 
 How it will work:
-* A 10x10 grid will have 8 ships of variable length randomly placed about.
+* A 10x10 grid will have 3 ships of variable length randomly placed about.
 * You will have 50 bullets to take down the ships that are placed down.
 * You can choose a row and column such as A3 to indicate where to shoot.
 * For every shot that hits or misses it will show up in the grid.

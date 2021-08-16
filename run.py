@@ -12,6 +12,20 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("battleship-words")
 
+# Create battle grid
+
+board = []
+
+for x in range(0, 10):
+    board.append(["0"] * 10)
+
+def print_board(board):
+    for i in board:
+        print(" ".join(i))
+print("You are entering battle perimetre!")
+print("Fire right away!\n")    
+print_board(board)
+
 # Create a function to retrieve a random word from each column in the worksheet.
 
 def three_letter_words():
@@ -28,8 +42,8 @@ def three_letter_words():
     data = battle_words.col_values(1)
     print(data)
 
-    user_three_str = input("Choose your word wisely to sink the ship: ")
-    print(f"You have selected {user_three_str}\n") 
+    user_three_str = input("Choose your word wisely to sink the ship: \n")
+    print(f"You have selected {user_three_str}") 
     
 three_letter_words()
 
@@ -48,8 +62,8 @@ def four_letter_words():
     data = battle_words.col_values(2)
     print(data)
 
-    user_four_str = input("Choose your word wisely to sink the ship: ")
-    print(f"You have selected {user_four_str}\n")
+    user_four_str = input("Choose your word wisely to sink the ship: \n")
+    print(f"You have selected {user_four_str}")
     
 four_letter_words()
 
@@ -67,9 +81,10 @@ def five_letter_words():
     data = battle_words.col_values(3)
     print(data)
 
-    user_five_str = input("Choose your word wisely to sink the ship: ")
-    print(f"You have selected {user_five_str}\n")
-    
+    user_five_str = input("Choose your word wisely to sink the ship: \n")
+    print(f"You have selected {user_five_str}")
+    has_five = user_five_str in data
+     
 five_letter_words()
 
 # board = []
