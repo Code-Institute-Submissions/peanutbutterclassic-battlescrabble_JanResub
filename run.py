@@ -14,7 +14,7 @@ SHEET = GSPREAD_CLIENT.open("battleship-words")
 
 # Create a function to retrieve a random word from each column in the worksheet.
 
-def get_battle_words():
+def three_letter_words():
     """
     Retrieve a randomised three letter word from data in google sheet.
     Get user to select a word from the list provided to sink the ship completely.
@@ -29,9 +29,48 @@ def get_battle_words():
     print(data)
 
     user_three_str = input("Choose your word wisely to sink the ship: ")
-    print(f"You have selected {user_three_str}\n")
+    print(f"You have selected {user_three_str}\n") 
     
-get_battle_words()
+three_letter_words()
+
+
+def four_letter_words():
+    """
+    Retrieve a randomised three letter word from data in google sheet.
+    Get user to select a word from the list provided to sink the ship completely.
+    If selection matches the word, the ship will sink. If not, user is given another chance until the right word is selected.
+    """
+    print("Select one word from the list to sink the ship.")
+    print("The number of letters in the word must match the number of grids that the ship in target occupies.")
+    print("For example: arc\n")
+
+    battle_words = SHEET.worksheet("battle-words")
+    data = battle_words.col_values(2)
+    print(data)
+
+    user_four_str = input("Choose your word wisely to sink the ship: ")
+    print(f"You have selected {user_four_str}\n")
+    
+four_letter_words()
+
+def five_letter_words():
+    """
+    Retrieve a randomised three letter word from data in google sheet.
+    Get user to select a word from the list provided to sink the ship completely.
+    If selection matches the word, the ship will sink. If not, user is given another chance until the right word is selected.
+    """
+    print("Select one word from the list to sink the ship.")
+    print("The number of letters in the word must match the number of grids that the ship in target occupies.")
+    print("For example: arc\n")
+
+    battle_words = SHEET.worksheet("battle-words")
+    data = battle_words.col_values(3)
+    print(data)
+
+    user_five_str = input("Choose your word wisely to sink the ship: ")
+    print(f"You have selected {user_five_str}\n")
+    
+five_letter_words()
 
 # board = []
 
