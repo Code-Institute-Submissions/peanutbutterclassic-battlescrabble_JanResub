@@ -115,3 +115,4 @@ To deploy this page to Heroku from GitHub repository, the following steps were t
 * I have been fortunate to get useful pointers from Code Institute's tutoring team, which I am grateful for.
 * Thanks to [Twilio Blog](https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html) for a thorough explanation on how to work with Google Spreadsheets and Python.
 * [Stack Overflow](https://stackoverflow.com/questions/18834636/random-word-generator-python)
+* [devpost](https://www.youtube.com/watch?v=zSQIGzmcp2I)
