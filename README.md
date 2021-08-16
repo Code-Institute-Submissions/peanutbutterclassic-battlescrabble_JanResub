@@ -113,3 +113,4 @@ To deploy this page to Heroku from GitHub repository, the following steps were t
    2. [Jie Jenn](https://www.youtube.com/watch?v=gkglr8GID5E) 
 * My Mentor Guido Cecilio Garcia Bernal was extremely helpful in breaking all the steps down for me and answering any questions I had, especially those concerning randomising words to add to the battleship game.
 * I have been fortunate to get useful pointers from Code Institute's tutoring team, which I am grateful for.
+* Thanks to [Twilio Blog](https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html) for a thorough explanation on how to work with Google Spreadsheets and Python.

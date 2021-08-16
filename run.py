@@ -25,12 +25,11 @@ def get_battle_words():
     print("For example: arc\n")
 
     battle_words = SHEET.worksheet("battle-words")
-    data = battle_words.get_all_values()
+    data = battle_words.col_values(1)
     print(data)
-    print(data[0:3])
 
-    user_str = input("Choose your word wisely to sink the ship: ")
-    print(f"You have selected {data_str}\n")
+    user_three_str = input("Choose your word wisely to sink the ship: ")
+    print(f"You have selected {user_three_str}\n")
     
 get_battle_words()
 
