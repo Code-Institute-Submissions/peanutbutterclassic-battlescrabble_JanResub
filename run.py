@@ -15,6 +15,8 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("battleship-words")
 
 # Create game introduction and rules
+
+
 def battle_intro():
     print("Welcome to Battle")
     for character in "Scrabble\n":
@@ -24,24 +26,25 @@ def battle_intro():
     if age >= 18:
         print("You are eligible to enter the battlefield.")
     else:
-        print(f"Hello {name.capitalize()}, check with your parents before playing this game.")
+        print(f"Hello {name.capitalize()}, you are too young to play.")
+
 
 def enter_battle_perimeter():
+    countdown_number = 10
+    print("Initiating Countdown Sequence...")
+    print("Preparing battle perimeter...")
+    while countdown_number >= 0:
+        print(f"{countdown_number} seconds...")
+        countdown_number -= 1
     print("YOU ARE ENTERING THE BATTLE PERIMETER!")
-
-# battle_intro()
-
-# Create a function to retrieve a random word from each column in the worksheet.
 
 
 def three_letter_words():
     """
     Retrieve a randomised three letter word from data in google sheet.
-    Get user to select a word from the list provided to sink the ship completely.
-    If selection matches the word, the ship will sink. If not, user is given another chance until the right word is selected.
     """
     print("Select one word from the list to sink the ship.")
-    print("The number of letters in the word must match the number of grids that the ship in target occupies.")
+    print("Guess the word with #letter = length of ship.")
     print("For example: arc\n")
 
     battle_words = SHEET.worksheet("battle-words")
@@ -50,45 +53,51 @@ def three_letter_words():
 
     # Input method shall have \n for heroku compatibility.
     user_three_str = input("Choose your word wisely to sink the ship: \n")
-    print(f"You have selected {user_three_str}") 
+    print(f"You have selected {user_three_str}")
+    if user_three_str == linked_words:
+        print("You sunk the ship")
+    else:
+        print("You missed!")
 
 
 def four_letter_words():
     """
     Retrieve a randomised three letter word from data in google sheet.
-    Get user to select a word from the list provided to sink the ship completely.
-    If selection matches the word, the ship will sink. If not, user is given another chance until the right word is selected.
     """
     print("Select one word from the list to sink the ship.")
-    print("The number of letters in the word must match the number of grids that the ship in target occupies.")
+    print("Guess the word with #letter = length of ship.")
     print("For example: beer\n")
 
     battle_words = SHEET.worksheet("battle-words")
     data = battle_words.col_values(2)
     print(data)
-    
     # Input method shall have \n for heroku compatibility.
     user_four_str = input("Choose your word wisely to sink the ship: \n")
     print(f"You have selected {user_four_str}")
+    if user_four_str == linked_words:
+        print("You sunk the ship")
+    else:
+        print("You missed!")
+
 
 def five_letter_words():
     """
     Retrieve a randomised three letter word from data in google sheet.
-    Get user to select a word from the list provided to sink the ship completely.
-    If selection matches the word, the ship will sink. If not, user is given another chance until the right word is selected.
     """
     print("Select one word from the list to sink the ship.")
-    print("The number of letters in the word must match the number of grids that the ship in target occupies.")
+    print("Guess the word with #letter = length of ship.")
     print("For example: break\n")
 
     battle_words = SHEET.worksheet("battle-words")
     data = battle_words.col_values(3)
     print(data)
-    
     # Input method shall have \n for heroku compatibility.
     user_five_str = input("Choose your word wisely to sink the ship: \n")
     print(f"You have selected {user_five_str}")
-    has_five = user_five_str in data
+    if user_five_str == linked_words:
+        print("You sunk the ship")
+    else:
+        print("You missed!")
 
 
 # three_letter_words()
@@ -96,6 +105,9 @@ def five_letter_words():
 # four_letter_words()
 
 def get_random_word(word_length):
+    """
+    Randomise words to be selected by player to completely sink the ship(s).
+    """
     battle_words = SHEET.worksheet("battle-words")
     words = battle_words.col_values(word_length-2)
     return random.choice(words[1:])
@@ -117,8 +129,11 @@ def get_random_word(word_length):
 #       )
 # print("The jumble is:", jumble)
 
+
 def validate_grid_and_place_ship(start_row, end_row, start_col, end_col):
-    """Will check the row or column to see if it is safe to place a ship there"""
+    """
+    Will check the row or column to see if it is safe to place a ship there
+    """
     global grid
     global ship_positions
 
@@ -137,7 +152,9 @@ def validate_grid_and_place_ship(start_row, end_row, start_col, end_col):
 
 
 def try_to_place_ship_on_grid(row, col, direction, length):
-    """Based on direction will call helper method to try and place a ship on the grid"""
+    """
+    Call helper method to try and place a ships on the grid.
+    """
     global grid_size
 
     start_row, end_row, start_col, end_col = row, row + 1, col, col + 1
@@ -162,7 +179,7 @@ def try_to_place_ship_on_grid(row, col, direction, length):
         end_row = row + length
 
     return validate_grid_and_place_ship(start_row, end_row, start_col, end_col)
-
+    
 
 def create_grid():
     """Will create a 10x10 grid and randomly place down ships
@@ -180,7 +197,7 @@ def create_grid():
     grid = []
     for r in range(rows):
         row = []
-        for c in range(cols):
+        for r in range(cols):
             row.append(".")
         grid.append(row)
 
@@ -196,7 +213,8 @@ def create_grid():
         if try_to_place_ship_on_grid(random_row, random_col, direction, ship_size):
             num_of_ships_placed += 1
             linked_word = get_random_word(ship_size)
-            linked_words.append({ 'row': random_row, 'col': random_col, 'word': linked_word })
+            linked_words.append({'row': random_row, 'col': random_col, 'word': linked_word})
+
 
 def print_grid():
     """Will print the grid with rows A-J and columns 0-9"""
@@ -248,12 +266,15 @@ linked_words = []
 def main():
     battle_intro()
     enter_battle_perimeter()
+    # create battle grid
     create_grid()
     print_grid()
+    # Print available words to completely sink the battleships
     print(linked_words)
     three_letter_words()
     four_letter_words()
     five_letter_words()
+
 
 if __name__ == '__main__':
     main()
