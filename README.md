@@ -9,11 +9,8 @@ Pre-reqs: Loops, Strings, Arrays, 2D Arrays, Global Variables, Methods.
 
 How it will work:
 * A 10x10 grid will have 3 ships of variable length randomly placed about.
-* You will have 50 bullets to take down the ships that are placed down.
-* You can choose a row and column such as A3 to indicate where to shoot.
-* For every shot that hits or misses it will show up in the grid.
-* A ship cannot be placed diagonally, so if a shot hits the rest of the ship is in one of 4 directions, left, right, up, and down.
-* If all ships are unearthed before using up all bullets, you win else, you lose.
+* Users can sink the ship(s) completely by guessing the words from a given list.
+* If all ships are unearthed before using up all bullets, you win else, you lose (feature still on pending).
 
 
 ## UX
