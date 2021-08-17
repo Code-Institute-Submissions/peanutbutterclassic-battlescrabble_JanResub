@@ -16,6 +16,7 @@ SHEET = GSPREAD_CLIENT.open("battleship-words")
 
 # Create game introduction and rules
 
+
 def battle_intro():
     print("----------Welcome to BattleScrabble!----------")
     name = input("What's your name? \n")
@@ -149,7 +150,7 @@ def try_to_place_ship_on_grid(row, col, direction, length):
         end_row = row + length
 
     return validate_grid_and_place_ship(start_row, end_row, start_col, end_col)
-   
+
 
 def create_grid():
     """Will create a 10x10 grid and randomly place down ships
