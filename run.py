@@ -38,13 +38,14 @@ def enter_battle_perimeter():
         countdown_number -= 1
     print("YOU ARE ENTERING THE BATTLE PERIMETER!")
 
-def missile_fire():
-    # Subtract 1 to adjust for python 0-based indexing
-    row = int(input('Row: ')) - 1
-    col = int(input('Col: ')) - 1
-    return (row, col)
 
-    x = user_guess(); x
+# def missile_fire():
+#     # Subtract 1 to adjust for python 0-based indexing
+#     row = int(input('Row: ')) - 1
+#     col = int(input('Col: ')) - 1
+#     return (row, col)
+
+#     x = user_guess(); x
 
 
 def three_letter_words():
@@ -283,7 +284,6 @@ def main():
     # check_for_game_over()
     # Print available words to completely sink the battleships
     print(linked_words)
-    
     three_letter_words()
     four_letter_words()
     five_letter_words()
