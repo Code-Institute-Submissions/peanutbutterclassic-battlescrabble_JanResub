@@ -277,12 +277,8 @@ linked_words = []
 def main():
     battle_intro()
     enter_battle_perimeter()
-    # create battle grid
     create_grid()
     print_grid()
-    # Firing
-    # check_for_game_over()
-    # Print available words to completely sink the battleships
     print(linked_words)
     three_letter_words()
     four_letter_words()
