@@ -14,10 +14,25 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("battleship-words")
 
+# Create game introduction and rules
+def battle_intro():
+    print("Welcome to Battle")
+    for character in "Scrabble\n":
+        print(character)
+    name = input("What's your name? \n")
+    age = int(input("What's your age: \n"))
+    if age >= 18:
+        print("You are eligible to enter the battlefield.")
+    else:
+        print(f"Hello {name.capitalize()}, check with your parents before playing this game.")
+
+def enter_battle_perimeter():
+    print("YOU ARE ENTERING THE BATTLE PERIMETER!")
+
+# battle_intro()
+
 # Create a function to retrieve a random word from each column in the worksheet.
-"""
-Function is duplicated three times for (1) three letter word (2) four letter word (3) five letter word.
-"""
+
 
 def three_letter_words():
     """
@@ -101,33 +116,6 @@ def get_random_word(word_length):
 #       """
 #       )
 # print("The jumble is:", jumble)
-
-
-# def print_grid():
-#     """Will print the grid with rows A-J and columns 0-9"""
-#     global grid
-#     global alphabet
-
-#     debug_mode = True
-
-#     alphabet = alphabet[0: len(grid) + 1]
-
-#     for row in range(len(grid)):
-#         print(alphabet[row], end=") ")
-#         for col in range(len(grid[row])):
-#             if grid[row][col] == "O":
-#                 if debug_mode:
-#                     print("O", end=" ")
-#                 else:
-#                     print(".", end=" ")
-#             else:
-#                 print(grid[row][col], end=" ")
-#         print("")
-
-#     print("  ", end=" ")
-#     for i in range(len(grid[0])):
-#         print(str(i), end=" ")
-#     print("")
 
 def validate_grid_and_place_ship(start_row, end_row, start_col, end_col):
     """Will check the row or column to see if it is safe to place a ship there"""
@@ -258,6 +246,8 @@ linked_words = []
 
 
 def main():
+    battle_intro()
+    enter_battle_perimeter()
     create_grid()
     print_grid()
     print(linked_words)
