@@ -16,11 +16,8 @@ SHEET = GSPREAD_CLIENT.open("battleship-words")
 
 # Create game introduction and rules
 
-
 def battle_intro():
-    print("Welcome to Battle")
-    for character in "Scrabble\n":
-        print(character)
+    print("----------Welcome to BattleScrabble!----------")
     name = input("What's your name? \n")
     age = int(input("What's your age: \n"))
     if age >= 18:
@@ -30,22 +27,7 @@ def battle_intro():
 
 
 def enter_battle_perimeter():
-    countdown_number = 10
-    print("Initiating Countdown Sequence...")
-    print("Preparing battle perimeter...")
-    while countdown_number >= 0:
-        print(f"{countdown_number} seconds...")
-        countdown_number -= 1
-    print("YOU ARE ENTERING THE BATTLE PERIMETER!")
-
-
-# def missile_fire():
-#     # Subtract 1 to adjust for python 0-based indexing
-#     row = int(input('Row: ')) - 1
-#     col = int(input('Col: ')) - 1
-#     return (row, col)
-
-#     x = user_guess(); x
+    print("YOU ARE ENTERING THE BATTLE PERIMETER!\n")
 
 
 def three_letter_words():
@@ -109,10 +91,6 @@ def five_letter_words():
         print("You missed!")
 
 
-# three_letter_words()
-# five_letter_words()
-# four_letter_words()
-
 def get_random_word(word_length):
     """
     Randomise words to be selected by player to completely sink the ship(s).
@@ -120,23 +98,6 @@ def get_random_word(word_length):
     battle_words = SHEET.worksheet("battle-words")
     words = battle_words.col_values(word_length-2)
     return random.choice(words[1:])
-
-# FIVE_LETTER_WORDS = get_words(3)
-# word = random.choice(FIVE_LETTER_WORDS[1:])
-# jumble = ""
-# while word:
-#     position = random.randrange(len(word))
-#     jumble += word[position]
-#     word = word[:position] + word[(position + 1):]
-# print(
-# """
-#       Welcome to WORD JUMBLE!!!
-
-#       Unscramble the leters to make a word.
-#       (press the enter key at prompt to quit)
-#       """
-#       )
-# print("The jumble is:", jumble)
 
 
 def validate_grid_and_place_ship(start_row, end_row, start_col, end_col):
