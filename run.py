@@ -46,6 +46,7 @@ def missile_fire():
 
     x = user_guess(); x
 
+
 def three_letter_words():
     """
     Retrieve a randomised three letter word from data in google sheet.
@@ -282,7 +283,7 @@ def main():
     # check_for_game_over()
     # Print available words to completely sink the battleships
     print(linked_words)
-    missile_fire()
+    
     three_letter_words()
     four_letter_words()
     five_letter_words()
