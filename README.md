@@ -2,7 +2,7 @@
 
 <!-- [View the live project here.](https://story-vault.herokuapp.com/) -->
 
-![](https://github.com/MiaTothova/story-vault/blob/main/images/responsive.png)
+![](https://raw.githubusercontent.com/peanutbutterclassic/battlescrabble/main/assets/images/screenshot_amiresponsive.png)
 The image is from [Am I responsive?](http://ami.responsivedesign.is/)
 
 Pre-reqs: Loops, Strings, Arrays, 2D Arrays, Global Variables, Methods.
@@ -73,12 +73,12 @@ The game is designed using CLI so the outlook is very basic.
 As a user/player, the game shall be easy to navigate in the terminal.
 * The battle grid appears as soon as the game starts.
 * The player has to select the coordinates to take down the battleships and guess the word at the end to completely sink the ships.
-![](https://github.com/MiaTothova/story-vault/blob/main/images/test-1.png)
+![](https://raw.githubusercontent.com/peanutbutterclassic/battlescrabble/main/assets/images/screenshot_errors.png)
 
  ### Additional Testing
 * [pep8online.com](http://pep8online.com/) is used to confirm my code.
 * python3 run.py has been used intensively during the creation of this game.
-* Automatic set up on [Heroku](https://id.heroku.com/login) allows me to see how the end product of the game from the code I created.
+* Automatic set up on [Heroku](https://id.heroku.com/login) which should allow me to see how the end product of the game from the code I created. However, errors occured which meant I had to abandon the development.
 
  ## Compatibility
 To ensure that a broad range of users can successfully view/use the site, I tested it across all major browsers on both desktop and mobile.
