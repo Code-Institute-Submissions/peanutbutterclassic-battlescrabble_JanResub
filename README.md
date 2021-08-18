@@ -20,20 +20,19 @@ I aimed to integrate ease-of-use concept despite the limitation of the CLI.
 * Over 18s only since this is a violent game.
 
 ### The game will help clients to:
-* Navigate easily through the terminal
-* Test their reading skills
-* Improve their imagination
-* Provide entertainment
+* Learn about coordinates.
+* Test their intuition.
+* Provide entertainment.
 
 ## Owner Stories
-1. As the owner, I want the game to be fun and make the user to keep returning.
+1. As the owner, I want the game to be fun and innovative.
 2. As the owner, I want the game to be educational.
 3. As the owner, I want to show my new learned skills with Python.
 
 ### User Stories
 1. As a new visitor, I want to easily navigate the terminal to play the game.
 2. As a visitor, I want to be able to exit the game when I get tired of playing.
-3. As a visitor, I want to be create and read fun stories.
+
 
 ## The skeleton
 The Game consists of only 1 page which is the terminal page. I am using Python to generate the data and create the game.

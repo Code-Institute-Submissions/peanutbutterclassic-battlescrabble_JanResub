@@ -14,9 +14,8 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("battleship-words")
 
-# Create game introduction and rules
 
-
+# Create game introduction 
 def battle_intro():
     print("----------Welcome to BattleScrabble!----------")
     name = input("What's your name? \n")
@@ -24,7 +23,7 @@ def battle_intro():
     if age >= 18:
         print("You are eligible to enter the battlefield.")
     else:
-        print(f"Hello {name.capitalize()}, you are too young to play.")
+        print(f"Hello {name.capitalize()}, you are too young to play this game. Please check with your parents first.")
 
 
 def enter_battle_perimeter():
