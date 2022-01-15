@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "battlescrabble",
+    "private_key_id": "3b4a41344e4ee7687505c03227eacd351240fe66",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCltifL6o1Nrprq\nGAfFNiT4tllXJtx9YWGEK780RmNsORjzGKMc3SY6IhfZiPrmzqiEl0wGeW5TbrPu\nAdABOt9GJKK+wkRSPB/VOTbZCC2Mh04k/emBifp20sGi5ahASopLCkDaWLdWXXCY\npc8jP3VPmLstH2xOid6SPXLsZ6U5CvTIHZlM/K4DC9cNZhhaChbaKCm1q5HDIYVG\nzd4E7TEFzt2SpkUffJVAuGtwWiGYAvI7+MJDOb7UdZ5OEHJYRsjnG9Md0/rO2lc0\nKxAlQKwTiobPi/P8VoKT8lyT7bztfpUBwoXzhrjjGtnNe6dMW/mcLNkYSUzYjmtb\nFtIZKME/AgMBAAECggEAJUjGTH2yHFPYXCpa+TbU+7a/hDnkqzsxXzUemKrrrMpu\nACg/bvudIcBRAGtvFGZUCT0naF+DALesOTVkMRqnaNdOXMBF8gDAIs/0NMG/ydoZ\nrX4Jv1Elrv19fuLQR+LdmcOtUtNaMM7mShoocGRTRzz0hFMJIeSoVNwJkwJA7QPa\nXh2HHhYNYhnH1CObazWeUCHLXC3RZ/e5hwst18kRBnKfbeBKjUTu+/9GYqS2ESsN\nLNZjU0D9IWWjzYyUkxK0uFClef03szBUKCkCOh2VHxVEvadePiM/ddPHt1Bq8gQK\nBZUYg90ZGqJUf1vIXzDsV3vdNsXDfBk7mr+UOwkDxQKBgQDknFuCzc4ro0n8za9z\nmLEmgCOTGxa/tUf35Y6biXx+tMzjYi+7ZPmrg/hTHxGYZfpSHpkSLlBnCrzk1Rrw\n+HrQpJf6P30ikAfchiNLchXyk+DEXbImdqxf8+dUXTdsl4+RWyR/jClL1fep7zbv\nCZ5cwnOOVbJelPmA3s/aD7OJ6wKBgQC5kKMsEyg71S1UFSu+eqbff4rXwtAZVZfD\nEJeI6tTZHB9zO1g+cMdLZTpYm4kf7X+JBH55omijMJUI914+Vv+Y0yUi9sEis14c\nDXiIEEmCuJwgF7Epd5N8X2uhE+RTQx9+rdigS141MjsZjA7jJLWVIpFkeniu2IdR\njzTaUjtc/QKBgQClxQNObDHNzs/9sqBA8D20r0Icj44FYUxYY2rvOdi+gBf54d6+\nwc+RIVbV3zeBDKFhHrLcTh0bOtwSCr1IcsWLuW5ClfsFLu+kZtf9AzMK/VQEz/Q4\nk+EWiuP5dsaTxarjOfXTTy06wmKeJMnut0jP9miYk2eN0fTCD88kTjJgFQKBgFel\nEwy8N6Ka+3/dR/39nFevu/pQj02H+dguPAR1Nfcdq1UX0IQdbGQV+crkG44y9KvY\nrYvxw45gYeQMQj0bhjm+cKnk9i/XnDmPu0A4wR+25jbaOdkmG0kBIKrB5HPXHkcN\nAWYkcuiZQwS7/EQYkJNR8m4M0ndy2ecRxprfgB5ZAoGBALLaC8XfdoIbsAcaaCjN\nLqLew6m0xTFfb3/+/Hu9u9DEIZKmvOlfW0if9txsMZpbObTabwiZEo1+oJhPHyH0\nMMOILxTYB6hf3sbniIguXZ19UXMUAjczMBJTCwP4RgoZjblxmfHVPwlPvWLXIhPr\nbvzVxTS33Xrg7VAQI+Hryicb\n-----END PRIVATE KEY-----\n",
+    "client_email": "rano-452@battlescrabble.iam.gserviceaccount.com",
+    "client_id": "105708525245034092672",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rano-452%40battlescrabble.iam.gserviceaccount.com"
+}
