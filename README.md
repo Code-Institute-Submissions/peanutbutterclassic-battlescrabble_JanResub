@@ -1,20 +1,21 @@
 # BattleScrabble
 
-<!-- [View the live project here.](https://story-vault.herokuapp.com/) -->
+[View the live project here.](https://battlescrabble.herokuapp.com/)
 
-![](https://raw.githubusercontent.com/peanutbutterclassic/battlescrabble/main/assets/images/screenshot_amiresponsive.png)
-The image is from [Am I responsive?](http://ami.responsivedesign.is/)
+![](https://raw.githubusercontent.com/peanutbutterclassic/battlescrabble/main/assets/images/screenshot_homepage.png)
+
+[BattleScrabble](https://battlescrabble.herokuapp.com/) attempts to combine the concept of battleship and scrabble into one game. However, due to technical issues, this version of battleship needs to be further refined in the coding department.
 
 Pre-reqs: Loops, Strings, Arrays, 2D Arrays, Global Variables, Methods.
 
-How it will work:
+How it work:
 * A 10x10 grid will have 3 ships of variable length randomly placed about.
-* Users can sink the ship(s) completely by guessing the words from a given list.
-* If all ships are unearthed before using up all bullets, you win else, you lose (feature still on pending).
+* Users can sink the ship(s) completely by guessing the coordinates and guessing the words from a given list (see list in txt file).
+* If all ships are sunk, you win else, you lose (feature still on pending).
 
 
 ## UX
-I aimed to integrate ease-of-use concept despite the limitation of the CLI.
+Game features will be generated on Heroku.
 
 #### Target audience:
 * Over 18s only since this is a violent game.
