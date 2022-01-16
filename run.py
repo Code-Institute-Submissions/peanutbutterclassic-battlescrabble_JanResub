@@ -1,18 +1,18 @@
 import random
 import time
-import gspread
-from google.oauth2.service_account import Credentials
+# import gspread
+# from google.oauth2.service_account import Credentials
 
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
+# SCOPE = [
+#     "https://www.googleapis.com/auth/spreadsheets",
+#     "https://www.googleapis.com/auth/drive.file",
+#     "https://www.googleapis.com/auth/drive"
+#     ]
 
-CREDS = Credentials.from_service_account_file("cred.json")
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open("battleship-words")
+# CREDS = Credentials.from_service_account_file("cred.json")
+# SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+# GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+# SHEET = GSPREAD_CLIENT.open("battleship-words")
 
 # Create game introduction 
 def battle_intro():
@@ -22,12 +22,15 @@ def battle_intro():
     if age >= 18:
         print("You are eligible to enter the battlefield.")
     else:
-        print(f"Hello {name.capitalize()}, you are too young to play this game. Please check with your parents first.")
+        print(f"Hello {name.capitalize()}, you are too young to play this game.")
 
 
 def enter_battle_perimeter():
     print("YOU ARE ENTERING THE BATTLE PERIMETER!\n")
 
+global battle_words_three
+global battle_words_four
+global battle_words_five
 
 def three_letter_words():
     """
@@ -37,8 +40,11 @@ def three_letter_words():
     print("Guess the word with #letter = length of ship.")
     print("For example: arc\n")
 
-    battle_words = SHEET.worksheet("battle-words")
-    data = battle_words.col_values(1)
+    # old code replaced
+    # battle_words = SHEET.worksheet("battle-words")
+
+    battle_words_three = ["arc", "bar", "car"]
+    data = random.battle_words_four
     print(data)
 
     # Input method shall have \n for heroku compatibility.
@@ -58,8 +64,9 @@ def four_letter_words():
     print("Guess the word with #letter = length of ship.")
     print("For example: beer\n")
 
-    battle_words = SHEET.worksheet("battle-words")
-    data = battle_words.col_values(2)
+    # battle_words = SHEET.worksheet("battle-words")
+    battle_words_four = ["four", "door", "loop"]
+    data = random.battle_words_four
     print(data)
     # Input method shall have \n for heroku compatibility.
     user_four_str = input("Choose your word wisely to sink the ship: \n")
@@ -78,8 +85,10 @@ def five_letter_words():
     print("Guess the word with #letter = length of ship.")
     print("For example: break\n")
 
-    battle_words = SHEET.worksheet("battle-words")
-    data = battle_words.col_values(3)
+    # battle_words = SHEET.worksheet("battle-words")
+    # data = battle_words.col_values(3)
+    battle_words_five = ["board", "beard", "weird"]
+    data = random.battle_words_five
     print(data)
     # Input method shall have \n for heroku compatibility.
     user_five_str = input("Choose your word wisely to sink the ship: \n")
@@ -94,9 +103,12 @@ def get_random_word(word_length):
     """
     Randomise words to be selected by player to completely sink the ship(s).
     """
-    battle_words = SHEET.worksheet("battle-words")
-    words = battle_words.col_values(word_length-2)
-    return random.choice(words[1:])
+    # battle_words = SHEET.worksheet("battle-words")
+    # words = battle_words.col_values(word_length-2)
+    # return random.choice(words[1:])
+    battle_words = (battle_words_three, battle_words_four, battle_words_five)
+    words = random.battle_words
+    return random.choice(words)
 
 
 def validate_grid_and_place_ship(start_row, end_row, start_col, end_col):
